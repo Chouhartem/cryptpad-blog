@@ -11,6 +11,8 @@ tags:
 - privacy
 ---
 
+![Swallow key](/images/swallow_key.png)
+
 You're looking for a privacy-focused collaboration tool?
 Well, you already found it!
 But what does privacy in this context actually mean?
