@@ -30,12 +30,14 @@ on how you use it.
 
 When speaking of security or privcay, we should always define the scenario we
 are speaking of.
-This scenario is the so-called [_threat
+For this we think of malicious actors, called
+[_adversaries_](https://ssd.eff.org/glossary/adversary),
+that could try to harm users of our system.
+The scenario is then the so-called [_threat
 model_](https://ssd.eff.org/glossary/threat-model) which defines the
-[adversarial capabilities](https://ssd.eff.org/glossary/capability). <!-- maybe it's better to introduce the notion of adversaries before talking about their capabilities -->
+[adversarial capabilities](https://ssd.eff.org/glossary/capability).
 In general, we aim to think of them to be as powerful as possible.
-If we can defend against a strong
-[adversary](https://ssd.eff.org/glossary/adversary),
+If we can defend against a strong adversary,
 we can also defend against a weaker one.
 
 The first assumption about the adversarial capabilities follows directly from
@@ -53,8 +55,8 @@ a modified CryptPad server software).
 
 We nevertheless defend against a _honest-but-curious_ (i.e., passive) server.
 The section assumption is thus that the server plays according to the
-rules, but could try to interfere sensitive data by simply sniffing on all
-received data. <!-- I wouldn't expect the audience to know what "sniffing" entails, maybe we can give an example of what such a server could learn from encrypted data -->
+rules, but could try to interfere sensitive data by simply monitoring and
+reading all received data.
 This scenario includes the possibility that a third-party gets access to the
 server and can see all data and logs.
 CryptPad already defended against such an adversary in the past when
@@ -190,15 +192,16 @@ decryption, for verifying signatures as well as the one for creating signatures
 
 
 ⚠️ This implies that the document is only as safe as the communication channels
-used to send these links. <!-- maybe worth giving an example of a channel here -->
+(e.g., email or a Signal chat)
+used to send these links.
 If you consider a channel to be unsafe, or if it is publicly accessible, you
 may want to isolate some of your documents from it, e.g., limit the sending
 of edit links to Signal chats with disapearing messages.
 
-Another possibility to safely share the access is to [send it over CryptPad's
-mailbox system to your
-contacts](https://docs.cryptpad.org/en/user_guide/share_and_access.html#sharing-with-contacts). <!-- I'm not sure we ever refer to the mailbox system in public documents, so maybe we can find another term to express this rather than the internal name -->
-This way, you do not have to use a secondary (potentially insecure) communication
+Another possibility to safely share the access is to [send it directly
+contacts](https://docs.cryptpad.org/en/user_guide/share_and_access.html#sharing-with-contacts)
+from within CryptPad.
+This way, the links never leave the encrypted platform and you do not have to use a secondary (potentially insecure) communication
 channel.
 
 <p style="text-align: center;">
@@ -234,8 +237,8 @@ password.
 This is especially useful for the case where you do not have a secure
 communication channel to share the link, as you can send the link and the
 password over two _distinct_ channels (e.g., text messaging and email).
-This way, the attacker has to sniff on both channels at the same time which
-makes it a lot more difficult. <!-- maybe "listen" or "monitor" would be clearer than "sniff" ? -->
+This way, the attacker has to monitor both channels at the same time which
+makes it a lot more difficult.
 
 When you share documents with your contacts directly on CryptPad, communications
 are encrypted, and we assume that you want to give them access.
@@ -259,7 +262,7 @@ You could, e.g., use it to share a password to a peer.
 CryptPad only provides a weak form of anonymity and does not hide your
 [IP address](https://ssd.eff.org/glossary/ip-address) or your ["user
 agent"](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent)
-(browser and [operating system](https://ssd.eff.org/glossary/operating-system)). <!-- this could be misinterpreted to mean that other users can see this information. Maybe we can be more specific and say it doesn't hide this info "from the server admins" -->
+(browser and [operating system](https://ssd.eff.org/glossary/operating-system)) from the server administrators.
 The server can furthermore theoretically link IP addresses of people who are often collaborating on the same documents.
 Of course, we do not run these analytics for our flagship instance, but we want
 you to have to trust us as little as possible.
@@ -297,7 +300,7 @@ About CryptPad:
   extended explanition about the concepts behind CryptPad.
 * We have published a [white paper](https://cryptpad.org/TODO) describing the
   securty mechanism and the cryptography used in CryptPad. This paper is
-  targeted to people who are already familiar with cryptography. <!-- XXX update this link before publishing -->
+  targeted to people who are already familiar with cryptography. <!-- TODO update this link before publishing -->
 
 More general:
 * The [surveillance self-defense guide](https://ssd.eff.org/) by the Electronic
