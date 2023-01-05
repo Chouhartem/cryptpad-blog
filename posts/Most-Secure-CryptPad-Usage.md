@@ -15,12 +15,12 @@ You're looking for a privacy-focused collaboration tool?
 Well, you already found it!
 But what does privacy in this context actually mean?
 And how is it technically enforced?
-Are there any additional precautiousness needed for an extra-safe usage of
+Are there any additional precautions needed for extra-safe usage of
 CryptPad?
 
 In this blog post we will answer these and other questions.
 We will show you in which scenario CryptPad is secure, and give you ideas for
-concrete actions for a safe CryptPad usage.
+concrete actions for safe CryptPad usage.
 While we do the most possible to make CryptPad secure, the security also depends
 on how you use it.
 
@@ -30,9 +30,9 @@ on how you use it.
 
 When speaking of security or privcay, we should always define the scenario we
 are speaking of.
-This scenario is the so called [_threat
+This scenario is the so-called [_threat
 model_](https://ssd.eff.org/glossary/threat-model) which defines the
-[adversarial capabilities](https://ssd.eff.org/glossary/capability).
+[adversarial capabilities](https://ssd.eff.org/glossary/capability). <!-- maybe it's better to introduce the notion of adversaries before talking about their capabilities -->
 In general, we aim to think of them to be as powerful as possible.
 If we can defend against a strong
 [adversary](https://ssd.eff.org/glossary/adversary),
@@ -54,7 +54,7 @@ a modified CryptPad server software).
 We nevertheless defend against a _honest-but-curious_ (i.e., passive) server.
 The section assumption is thus that the server plays according to the
 rules, but could try to interfere sensitive data by simply sniffing on all
-received data.
+received data. <!-- I wouldn't expect the audience to know what "sniffing" entails, maybe we can give an example of what such a server could learn from encrypted data -->
 This scenario includes the possibility that a third-party gets access to the
 server and can see all data and logs.
 CryptPad already defended against such an adversary in the past when
@@ -114,10 +114,10 @@ There are three main building blocks:
    " width=400>
    </p>
 3. **Digital Signatures** are closely related to physical seals: Only the
-   persons in hold of the seal (which we call the _signing key_) can sign, but
-   all other people can verify the auhenticity of a document.
-   Digital signatures make it further impossible to modify sealead content
-   without the readers notifying it.
+   persons in possession of the seal (which we call the _signing key_) can sign, but
+   all other people can verify the authenticity of a document.
+   Digital signatures make it further impossible to modify sealed content
+   without the readers noticing it.
    <p style="text-align: center;">
    <img title="Signature" src="https://unsplash.com/photos/pegxjW_1YOU/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTZ8fHNpZ25hdHVyZXxlbnwwfHx8fDE2NzE2NzA3ODQ&force=true&w=640" width=400>
    </p>
@@ -134,7 +134,7 @@ security of your CryptPad usage:
   software and as such there are [various
   instances](https://cryptpad.org/instances/) running it. While we host the
   [flagship instance](https://cryptpad.fr) you might choose a different one
-  depending on, e.g., the jurisdication.
+  depending on, e.g., the jurisdiction.
 * Ensure that you are connecting to the chosen CryptPad instance over
   [HTTPS](https://ssd.eff.org/module/what-should-i-know-about-encryption#transport-layer-encryption-example-https).
 * All security mechanisms are only as strong as your password is.
@@ -190,14 +190,14 @@ decryption, for verifying signatures as well as the one for creating signatures
 
 
 ⚠️ This implies that the document is only as safe as the communication channels
-used to send these links.
+used to send these links. <!-- maybe worth giving an example of a channel here -->
 If you consider a channel to be unsafe, or if it is publicly accessible, you
 may want to isolate some of your documents from it, e.g., limit the sending
 of edit links to Signal chats with disapearing messages.
 
 Another possibility to safely share the access is to [send it over CryptPad's
 mailbox system to your
-contacts](https://docs.cryptpad.org/en/user_guide/share_and_access.html#sharing-with-contacts).
+contacts](https://docs.cryptpad.org/en/user_guide/share_and_access.html#sharing-with-contacts). <!-- I'm not sure we ever refer to the mailbox system in public documents, so maybe we can find another term to express this rather than the internal name -->
 This way, you do not have to use a secondary (potentially insecure) communication
 channel.
 
@@ -235,7 +235,7 @@ This is especially useful for the case where you do not have a secure
 communication channel to share the link, as you can send the link and the
 password over two _distinct_ channels (e.g., text messaging and email).
 This way, the attacker has to sniff on both channels at the same time which
-makes it a lot more difficult.
+makes it a lot more difficult. <!-- maybe "listen" or "monitor" would be clearer than "sniff" ? -->
 
 When you share documents with your contacts directly on CryptPad, communications
 are encrypted, and we assume that you want to give them access.
@@ -251,16 +251,16 @@ which will be destroyed either after the set expiration time or after the shared
 document was opened the first time.
 
 This feature is especially useful if you have to share sensitive data that
-should not be accessible for ever.
+should not be accessible forever.
 You could, e.g., use it to share a password to a peer.
 
 ## 🕵️ Anonymity
 
-CryptPad does only provide a weak form of anonymity and does not hide your
+CryptPad only provides a weak form of anonymity and does not hide your
 [IP address](https://ssd.eff.org/glossary/ip-address) or your ["user
 agent"](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent)
-(browser and [operating system](https://ssd.eff.org/glossary/operating-system)).
-The server can furthermore theoretically link IP addresses of people who are often colaborating on the same documents.
+(browser and [operating system](https://ssd.eff.org/glossary/operating-system)). <!-- this could be misinterpreted to mean that other users can see this information. Maybe we can be more specific and say it doesn't hide this info "from the server admins" -->
+The server can furthermore theoretically link IP addresses of people who are often collaborating on the same documents.
 Of course, we do not run these analytics for our flagship instance, but we want
 you to have to trust us as little as possible.
 You may want therefore use the following tools and techniques:
@@ -269,7 +269,7 @@ You may want therefore use the following tools and techniques:
 CryptPad and hide your IP address.
 * A burner account that is only used for specific high-risk actions such as
   working on a small set of documents or publishing sensitive information to
-  prevent the possibility of linking IP addresses of colaborating people.
+  prevent the possibility of linking IP addresses of collaborating people.
 * [Tails](https://tails.boum.org/) for leaving no traces on your local device.
 
 ## 💡 Other Tools
@@ -297,7 +297,7 @@ About CryptPad:
   extended explanition about the concepts behind CryptPad.
 * We have published a [white paper](https://cryptpad.org/TODO) describing the
   securty mechanism and the cryptography used in CryptPad. This paper is
-  targeted to people who are already familiar with cryptography.
+  targeted to people who are already familiar with cryptography. <!-- XXX update this link before publishing -->
 
 More general:
 * The [surveillance self-defense guide](https://ssd.eff.org/) by the Electronic
