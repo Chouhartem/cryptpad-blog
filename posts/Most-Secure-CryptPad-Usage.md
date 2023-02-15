@@ -17,20 +17,20 @@ You're looking for a privacy-focused collaboration tool?
 Well, you already found it!
 But what does privacy in this context actually mean?
 And how is it technically enforced?
-Are there any additional precautions needed for extra-safe usage of
+Are there any additional precautiouns needed for an extra-safe usage of
 CryptPad?
 
 In this blog post we will answer these and other questions.
-We will show you in which scenario CryptPad is secure, and give you ideas for
-concrete actions for safe CryptPad usage.
-While we do the most possible to make CryptPad secure, the security also depends
+We will show you in which scenarios CryptPad is secure, and give you ideas for
+concrete actions for using CryptPad safely.
+While we do as much as possible to make CryptPad secure, its security also depends
 on how you use it.
 
 ## 🧑‍🏫 Preliminaries
 
 ### 🗺 Threat model
 
-When speaking of security or privcay, we should always define the scenario we
+When speaking of security or privacy, we should always define the scenario we
 are speaking of.
 For this we think of malicious actors, called
 [_adversaries_](https://ssd.eff.org/glossary/adversary),
@@ -55,14 +55,14 @@ Hence, you must trust the server to not run any _active_
 [attacks](https://ssd.eff.org/glossary/attack) (i.e., not to run
 a modified CryptPad server software).
 
-We nevertheless defend against a _honest-but-curious_ (i.e., passive) server.
-The section assumption is thus that the server plays according to the
-rules, but could try to interfere sensitive data by simply monitoring and
-reading all received data.
+We nevertheless defend against an _honest-but-curious_ (i.e., passive) server.
+The second assumption is thus that the server plays according to the
+rules, but could try to infer sensitive information by analyzing all
+the data it receives.
 This scenario includes the possibility that a third-party gets access to the
 server and can see all data and logs.
-CryptPad already defended against such an adversary in the past when
-[an instance server was seized by the police](https://newsrnd.com/tech/2022-06-24-data-confiscated-from-pirate-party-servers.SJxeH5I79q.html).
+CryptPad has already defended against such an adversary in the past when
+[a third-party instance was seized by the police](https://newsrnd.com/tech/2022-06-24-data-confiscated-from-pirate-party-servers.SJxeH5I79q.html).
 We therefore consider this scenario to be highly realistic.
 
 Lastly, we assume the attackers to have network capability. This would be the case
@@ -134,6 +134,12 @@ We will explain the usage below in the section about Documents.
 We outline some basic measurements that allow you to significantly increase the
 security of your CryptPad usage:
 
+<!-- ensure that you are using an instance that is up-to-date
+  ie. compare against https://github.com/xwiki-labs/cryptpad
+  https://cryptpad.org/instances/ only lists third-party hosts that
+  have updated in a reasonable amount of time
+-->
+
 * CryptPad is [open source](https://ssd.eff.org/glossary/open-source-software)
   software and as such there are [various
   instances](https://cryptpad.org/instances/) running it. While we host the
@@ -146,7 +152,7 @@ security of your CryptPad usage:
   data stored on CryptPad.
   We recommend you to either generate a random password using a [password
   manager](https://ssd.eff.org/module/animated-overview-using-password-managers-stay-safe-online) or to [choose
-  mulitple words](https://www.eff.org/dice) in case the password needs to be
+  multiple words](https://www.eff.org/dice) in case the password needs to be
   memorizable.
   Use this password only for CryptPad to avoid other services leaking it.
 * Log out of CryptPad after each session to require the password to
@@ -157,7 +163,7 @@ security of your CryptPad usage:
 
 As we will show below, adding your peers as CryptPad contacts lets you more
 easily and safely share documents.
-You can moreover restrict access of a document to specific contacts and exchange
+You can moreover restrict access to a document to specific contacts and exchange
 text messages with them.
 
 The easiest way to add someone to your contacts is to [share the link to your
@@ -194,8 +200,7 @@ decryption, for verifying signatures as well as the one for creating signatures
 
 
 ⚠️ This implies that the document is only as safe as the communication channels
-(e.g., email or a Signal chat)
-used to send these links.
+(e.g., email or a Signal chat) used to send these links.
 If you consider a channel to be unsafe, or if it is publicly accessible, you
 may want to isolate some of your documents from it, e.g., limit the sending
 of edit links to Signal chats with disapearing messages.
@@ -241,6 +246,9 @@ communication channel to share the link, as you can send the link and the
 password over two _distinct_ channels (e.g., text messaging and email).
 This way, the attacker has to monitor both channels at the same time which
 makes it a lot more difficult.
+<!-- maybe "listen" or "monitor" would be clearer than "sniff" ? -->
+
+<!-- a diagram of this might be nice... like how David's shredder-unshredder image shows things being unreadable in transit, we could show two independent but readable things being combined? -->
 
 When you share documents with your contacts directly on CryptPad, communications
 are encrypted, and we assume that you want to give them access.
@@ -300,9 +308,9 @@ About CryptPad:
   computation, and architectures of
   resilience"](https://peertube.xwiki.com/w/jAP48FTXpi9CpJnb8SSVDh) is an
   extended explanition about the concepts behind CryptPad.
-* We have published a [white paper](https://cryptpad.org/TODO) describing the
-  securty mechanism and the cryptography used in CryptPad. This paper is
-  targeted to people who are already familiar with cryptography. <!-- TODO update this link before publishing -->
+* We have published a [white paper](https://blog.cryptpad.org/2023/02/02/Whitepaper/)
+* describing the securty mechanism and the cryptography used in CryptPad. This paper is
+  targeted to people who are already familiar with cryptography.
 
 More general:
 * The [surveillance self-defense guide](https://ssd.eff.org/) by the Electronic
