@@ -1,13 +1,13 @@
 ---
 title: The Most Secure Way To Use CryptPad
-date: 2022-12-24 # TODO
+date: 2023-03-30
 author: Theo von Arx
-lang: en
 summary: We show you in which scenario CryptPad is secure, and give you ideas for concrete actions for a safe CryptPad usage.
 cover: /images/swallow_key.png
 tags:
-- security
 - tutorials
+- blueprints
+- security
 - privacy
 ---
 
@@ -17,7 +17,7 @@ You're looking for a privacy-focused collaboration tool?
 Well, you already found it!
 But what does privacy in this context actually mean?
 And how is it technically enforced?
-Are there any additional precautiouns needed for an extra-safe usage of
+Are there any additional precautions needed for an extra-safe usage of
 CryptPad?
 
 In this blog post we will answer these and other questions.
@@ -28,7 +28,7 @@ on how you use it.
 
 ## 🧑‍🏫 Preliminaries
 
-### 🗺 Threat model
+### 🗺️ Threat model
 
 When speaking of security or privacy, we should always define the scenario we
 are speaking of.
@@ -159,7 +159,7 @@ security of your CryptPad usage:
   access your data on CryptPad. Otherwise, anybody with access to your device
   can also access your data on CryptPad.
 
-## 🧑 Contacts
+## 📇 Contacts
 
 As we will show below, adding your peers as CryptPad contacts lets you more
 easily and safely share documents.
@@ -185,7 +185,11 @@ prove that they own the private signing key linked to the document. For this,
 they sign their modifications and other people working on the same document can
 verify that the modification was indeed done by an authorized person.
 
-### ♻ Sharing
+### 📨 Sharing
+
+<!-- XXX emphasize sharing with contacts first as the most secure option -->
+
+
 CryptPad keeps these technical details "under the hood" and provides a simple
 interface to [share
 documents](https://docs.cryptpad.org/en/user_guide/share_and_access.html#sharing-a-link)
@@ -198,12 +202,11 @@ decryption, for verifying signatures as well as the one for creating signatures
 <img title="Share via link" src="https://docs.cryptpad.org/en/_images/modal-share-link.png">
 </p>
 
-
 ⚠️ This implies that the document is only as safe as the communication channels
 (e.g., email or a Signal chat) used to send these links.
 If you consider a channel to be unsafe, or if it is publicly accessible, you
 may want to isolate some of your documents from it, e.g., limit the sending
-of edit links to Signal chats with disapearing messages.
+of edit links to Signal chats with disappearing messages.
 
 Another possibility to safely share the access is to [send it directly
 contacts](https://docs.cryptpad.org/en/user_guide/share_and_access.html#sharing-with-contacts)
